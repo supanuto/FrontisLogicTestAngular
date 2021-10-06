@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Frontis Logic Test Angular JSON Create Form </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <form [formGroup]="formGroup">
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>Notes</ion-label>
+    <ion-textarea formControlName="jsonDataMock" [(ngModel)]="jsonDataMockForm.jsonDataMock" rows="6" cols="20" placeholder="Enter any notes here..."></ion-textarea>
+  </ion-item>
+
+  <app-json-form [jsonFormData]="formData"></app-json-form>
+</ion-content>
+</form> -->
+<ion-content class="ion-padding">
+<form [formGroup]="formGroup">
+  <ion-item>
+    <ion-label>Input Here:</ion-label>
+    <ion-textarea  formControlName="jsonDataMock" (ngModel)="jsonDataMockForm.jsonDataMock" (ngModelChange)="viewTextChange()" rows="10" placeholder="Enter any notes here..."></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <app-json-form [jsonFormData]="formData" 
+                    (onJsonForm1Change)="onJsonForm1Change($event)"
+                  style="width: 600px;">
+    </app-json-form>
+  </ion-item>
+  <ion-item>
+    <app-json-form2 [jsonFormData2]="formData2" style="width: 600px;"></app-json-form2>
+  </ion-item>
+</form>
+</ion-content>
